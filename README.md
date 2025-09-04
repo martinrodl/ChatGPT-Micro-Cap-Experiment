@@ -6,6 +6,7 @@ Welcome to the repo behind my 6-month live trading experiment where ChatGPT mana
 ## Repository Structure
 
 - **`trading_script.py`** - Main trading engine with portfolio management and stop-loss automation
+- **`be_fastapi_bot.py`** - FastAPI server that runs an autonomous Alpaca trading bot
 - **`Scripts and CSV Files/`** - My personal portfolio (updates every trading day)
 - **`Start Your Own/`** - Template files and guide for starting your own experiment  
 - **`Weekly Deep Research (MD|PDF)/`** - Research summaries and performance reports
@@ -84,8 +85,19 @@ This project is an attempt to find out — with transparency, data, and a real b
 - Internet connection for market data
 - ~10MB storage for CSV data files
 
+# FastAPI Autotrader
+
+`be_fastapi_bot.py` exposes a FastAPI app that runs the moving-average
+strategy against Alpaca. Start the server with:
+
+```bash
+uvicorn be_fastapi_bot:app --reload
+```
+
+Set the required Alpaca API keys in the environment before launching.
+
 # Follow Along
-The experiment runs from June 2025 to December 2025.  
+The experiment runs from June 2025 to December 2025.
 Every trading day I will update the portfolio CSV file.  
 If you feel inspired to do something similar, feel free to use this as a blueprint.
 
